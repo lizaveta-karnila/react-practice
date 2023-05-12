@@ -12,11 +12,11 @@ const MemoizedListItem = memo(function ListItem({item, selected, onClick}: IProp
     expensiveOperation(selected);
 
     return (
-        <li
-            style={selected ? { textDecoration: "line-through" } : undefined}
-            onClick={() => onClick(item)}
-        >
-            {item.name}
+        <li>
+            <label>
+                <input type='checkbox' checked={selected} onChange={() => onClick(item)} />
+                <span>{item.name}</span>
+            </label>
         </li>
     );
 })
