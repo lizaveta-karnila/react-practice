@@ -15,21 +15,21 @@ function ListOptimizationExample() {
 
     useEffect(() => {
         dispatch(setAllListItems(mockListItems));
-    }, [])
+    }, [dispatch])
 
     const toggleItem = useCallback((item) => {
         dispatch(toggleItemAction(item))
     }, [dispatch]);
 
     return (
-        <>
-            <h1>List Example</h1>
+        <div>
+            <h1>List with optimization</h1>
             {
                 allItems
                     ? <List allItems={allItems} selectedItems={selectedItems} toggleItem={toggleItem}/>
                     : <Loader/>
             }
-        </>
+        </div>
     );
 }
 
