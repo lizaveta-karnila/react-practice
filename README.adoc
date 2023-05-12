@@ -1,0 +1,4 @@
+Format code:
+
+- VSCode - Ctrl+Shift+I
+- VSCode - Ctrl+Alt+L

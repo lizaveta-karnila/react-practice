@@ -1,6 +1,6 @@
-import { IListItem } from '../interfaces/list-item';
-import { useCallback } from 'react';
-import MemoizedListItem from "./ListItem";
+import {IListItem} from '../interfaces/list-item';
+import {useCallback} from 'react';
+import MemoizedListItem from './ListItem';
 
 interface IProps {
     allItems: IListItem[],
