@@ -7,11 +7,17 @@ import CopyToClipboardHookUsageExample from './modules/HooksUsageExample/hooks/C
 import UseFilterHookUsageExample from './modules/HOCvsHookFilter/Hook';
 import WithFilterHOCUsageExample from './modules/HOCvsHookFilter/HOC';
 import {postsMock} from './modules/HOCvsHookFilter/commonMock/mockData';
+import LanguageSwitchingExample from './modules/LanguageSwitching';
 
 function App() {
     const posts = postsMock;
     return (
         <Provider store={store}>
+            <div className="i18n">
+                {/*Делала по гайду: https://dev.to/franklin030601/building-a-multi-language-app-with-react-js-2och*/}
+                <LanguageSwitchingExample/>
+            </div>
+
             <div className="hooks" style={{display: 'flex', gap: 24}}>
                 <div style={{flex: '1 1'}}>
                     <MemoListOptimizationExample/>
