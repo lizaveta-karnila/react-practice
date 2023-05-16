@@ -1,4 +1,4 @@
-import {IListItem} from '../../components/ListOptimizationExample/interfaces/list-item';
+import {IListItem} from '../../modules/MemoListOptimizationExample/interfaces/list-item';
 
 export interface IListOptimizationState {
     allItems: IListItem[] | null;

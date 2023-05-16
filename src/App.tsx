@@ -1,17 +1,39 @@
-import ListOptimizationExample from './components/ListOptimizationExample';
 import {store} from './store/store';
 import {Provider} from 'react-redux';
-import ListWithoutOptimizationExample from './components/ListOptimizationExample/ListWithoutOptimization';
+import MemoListOptimizationExample from './modules/MemoListOptimizationExample/MemoListOptimizationExample';
+import ListWithoutOptimizationExample from './modules/MemoListOptimizationExample/ListWithoutOptimization';
+import DebounceHookUsageExample from './modules/HooksUsageExample/hooks/Debounce/usageExample';
+import CopyToClipboardHookUsageExample from './modules/HooksUsageExample/hooks/CopytoClipboard/usageExample';
+import UseFilterHookUsageExample from './modules/HOCvsHookFilter/Hook';
+import WithFilterHOCUsageExample from './modules/HOCvsHookFilter/HOC';
+import {postsMock} from './modules/HOCvsHookFilter/commonMock/mockData';
 
 function App() {
-  return (
-      <Provider store={store}>
-          <div style={{display: 'flex', gap: 24}}>
-              <ListOptimizationExample />
-              <ListWithoutOptimizationExample />
-          </div>
-      </Provider>
-  )
+    const posts = postsMock;
+    return (
+        <Provider store={store}>
+            <div className="hooks" style={{display: 'flex', gap: 24}}>
+                <div style={{flex: '1 1'}}>
+                    <MemoListOptimizationExample/>
+                </div>
+                <div style={{flex: '1 1'}}>
+                    <ListWithoutOptimizationExample/>
+                </div>
+            </div>
+            <div className="hooks">
+                <DebounceHookUsageExample/>
+                <CopyToClipboardHookUsageExample/>
+            </div>
+            <div className="HOC-vs-hook-filter" style={{display: 'flex', gap: 24}}>
+                <div style={{flex: '1 1'}}>
+                    <UseFilterHookUsageExample posts={[...posts]}/>
+                </div>
+                <div style={{flex: '1 1'}}>
+                    <WithFilterHOCUsageExample posts={[...posts]}/>
+                </div>
+            </div>
+        </Provider>
+    )
 }
 
 export default App

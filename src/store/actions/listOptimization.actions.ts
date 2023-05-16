@@ -1,5 +1,5 @@
 import {EListOptimizationActions, ISetAllItemsAction, IToggleItemAction} from '../types/listOptimization';
-import {IListItem} from '../../components/ListOptimizationExample/interfaces/list-item';
+import {IListItem} from '../../modules/MemoListOptimizationExample/interfaces/list-item';
 
 export function setAllListItems(payload: IListItem[] | null): ISetAllItemsAction {
     return {
