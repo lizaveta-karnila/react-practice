@@ -1,0 +1,56 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    transition: all 0.1s ease-in-out;
+    pointer-events: none;
+
+    &.is-opened {
+        opacity: 1;
+        pointer-events: visible;
+    }
+
+    .modal {
+        width: 500px;
+        background-color: #fff;
+        padding: 16px;
+        border-radius: 8px;
+
+        &-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            gap: 8px;
+
+            &-title {
+                font-size: 24px;
+            }
+
+            .close-button-wrapper {
+                .close-button {
+                    height: 18px;
+                    width: 18px;
+                    color: red;
+                    cursor: pointer;
+                }
+
+                &:hover {
+                    color: yellow;
+                }
+            }
+        }
+
+        &-content {
+
+        }
+    }
+}

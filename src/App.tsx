@@ -8,17 +8,13 @@ import UseFilterHookUsageExample from './modules/HOCvsHookFilter/Hook';
 import WithFilterHOCUsageExample from './modules/HOCvsHookFilter/HOC';
 import {postsMock} from './modules/HOCvsHookFilter/commonMock/mockData';
 import LanguageSwitchingExample from './modules/LanguageSwitching';
+import ModalUsage from './modules/ModalUsage';
 
 function App() {
     const posts = postsMock;
     return (
         <Provider store={store}>
-            <div className="i18n">
-                {/*Делала по гайду: https://dev.to/franklin030601/building-a-multi-language-app-with-react-js-2och*/}
-                <LanguageSwitchingExample/>
-            </div>
-
-            <div className="hooks" style={{display: 'flex', gap: 24}}>
+            <div className="memo" style={{display: 'flex', gap: 24}}>
                 <div style={{flex: '1 1'}}>
                     <MemoListOptimizationExample/>
                 </div>
@@ -37,6 +33,13 @@ function App() {
                 <div style={{flex: '1 1'}}>
                     <WithFilterHOCUsageExample posts={[...posts]}/>
                 </div>
+            </div>
+            <div className="i18n">
+                {/*Делала по гайду: https://dev.to/franklin030601/building-a-multi-language-app-with-react-js-2och*/}
+                <LanguageSwitchingExample/>
+            </div>
+            <div className="components">
+                <ModalUsage/>
             </div>
         </Provider>
     )
