@@ -9,9 +9,11 @@ import WithFilterHOCUsageExample from './modules/HOCvsHookFilter/HOC';
 import {postsMock} from './modules/HOCvsHookFilter/commonMock/mockData';
 import LanguageSwitchingExample from './modules/LanguageSwitching';
 import ModalUsage from './modules/ModalUsage';
+import ConfirmModalUsage from './modules/ConfirmModalUsage';
+import ConfirmDialogProvider from './modules/ConfirmModal/ConfirmDialogProvider';
 
 function App() {
-    const posts = postsMock;
+
     return (
         <Provider store={store}>
             <div className="memo" style={{display: 'flex', gap: 24}}>
@@ -28,10 +30,10 @@ function App() {
             </div>
             <div className="HOC-vs-hook-filter" style={{display: 'flex', gap: 24}}>
                 <div style={{flex: '1 1'}}>
-                    <UseFilterHookUsageExample posts={[...posts]}/>
+                    <UseFilterHookUsageExample posts={[...postsMock]}/>
                 </div>
                 <div style={{flex: '1 1'}}>
-                    <WithFilterHOCUsageExample posts={[...posts]}/>
+                    <WithFilterHOCUsageExample posts={[...postsMock]}/>
                 </div>
             </div>
             <div className="i18n">
@@ -40,6 +42,11 @@ function App() {
             </div>
             <div className="components">
                 <ModalUsage/>
+            </div>
+            <div className="custom-confirm">
+                <ConfirmDialogProvider>
+                    <ConfirmModalUsage/>
+                </ConfirmDialogProvider>
             </div>
         </Provider>
     )
